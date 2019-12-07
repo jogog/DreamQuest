@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Free Website Templates</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>    <title>Free Website Templates</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <!--[if IE]>
@@ -72,19 +72,23 @@
             <div id="page_title">
                 <img src="images/title_main_page.gif" width="47" height="148" alt="Dream Quest"/>
             </div><!-- end page_title -->
-            <div id="news">
-                <div>
-                    <div>
-                        <h2><img src="images/title_latest_news.gif" width="78" height="5" alt="latest news"/></h2>
-                        <img src="images/picture_3.jpg" width="96" height="56" alt="picture 3"/>
-                        <p>05-20-2005</p>
-                        <p>This is a demo text please replase this text with the original one please replase this
-                            text.</p>
-                        <p class="readmore"><a href="http://www.freewebsitetemplates.com"><img
-                                src="images/btn_learn_more.gif" width="68" height="7" alt="learn more"/></a></p>
-                    </div>
-                </div>
+            <span>"Выберите интересующие вас направление"</span>>
+            <div id="choiceGeneral">
+                <select>
+                    <option v-for="option in options" v-bind:value="option.value">
+                        {{ option.text }}
+                    </option>
+                </select>
             </div><!-- end news -->
+            <span>"Выберите более узкое направление"</span>
+            <div id="choice">
+                <select>
+                    <option v-for="option in options" v-bind:value="option.value">
+                        {{ option.text }}
+                    </option>
+                </select>
+            </div><!-- end news -->
+            <button> <img height="30" width="60" src="images/button_go..jpg"/></button>
             <div class="clear"></div>
         </div><!-- end .inner -->
         <div id="footer">
@@ -116,8 +120,8 @@
 
 </div><!-- end wrapper -->
 <!-- Do not remove read http://www.freewebsitetemplates.com/termsofuse/ -->
-<div style="clear:both;position:relative;display:block;margin-top:530px;">
-    Powered by <a href="http://www.freewebsitetemplates.com">Free Website Templates</a>
-</div>
+
+<script src="/js/main.js"></script>
+
 </body>
 </html>
